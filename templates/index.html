@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Вычислитель прогнозных значений износа и оставшегося ресурса режущего инструмента</title>
+    <style>
+        /* Установка цвета фона для всей страницы */
+        body {
+            background-color: #f0f0f0; /* Светло-серый цвет фона */
+        }
+        /* Стилизация контента страницы */
+        .content {
+            text-align: center;
+            padding: 50px;
+        }
+        /* Стилизация кнопки */
+        input[type="submit"] {
+            background-color: #87CEFA; /* Голубой цвет */
+            color: white; /* Белый текст */
+            padding: 10px 20px; /* Подушечки вокруг текста */
+            border: none; /* Убираем границу */
+            border-radius: 5px; /* Скругляем углы */
+            cursor: pointer; /* Курсор в виде указателя */
+            transition: background-color 0.3s; /* Плавное изменение цвета при наведении */
+        }
+        /* Изменение стиля кнопки при наведении */
+        input[type="submit"]:hover {
+            background-color: #6495ED; /* Потемнее голубой при наведении */
+        }
+        /* Стилизация изображения внизу страницы */
+        img.footer-image {
+            width: 30%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Вычислитель прогнозных значений износа и оставшегося ресурса режущего инструмента</h1>
+        <p>{{ message|safe }}</p>
+        <form action="/" method="post">
+            <p>
+                <label>Введите время наработки инструмента, мин:</label>
+                <input type="text" name="Operating_time" required>
+            </p>
+            <p>
+                <input type="submit" value="Определить прогнозные значения">
+            </p>
+        </form>
+    </div>
+    <!-- Изображение в нижней части страницы -->
+    <img src="{{ url_for('static', filename='/A12-08028TC06.jpeg') }}" class="footer-image" alt="Footer Image">
+</body>
+</html>
